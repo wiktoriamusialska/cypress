@@ -1,0 +1,23 @@
+describe('My First Test', () => {
+    it('Does not do much!', () => {
+        cy.visit('http://gamma.hq.ais.pl:4200/')
+        cy.get('#username').type('cco1admin')
+        cy.get('#password').type('neverclear')
+        cy.get('#loginButton').click()
+        cy.get('p').get('strong').should('have.text',' cco1admin ')
+        cy.get('#mco_prinav > ul > :nth-child(9) > a').click()
+        cy.get('#ext-gen37').click()
+        cy.get('#ext-gen60 > :nth-child(5)').click()
+        cy.get('#nameUser').click()
+        cy.get('#nameUser').type('Wiktoria')
+        cy.get('#mail').click()
+        cy.get('#mail').type('victoria_1@ais.pl')
+        cy.get('#dateFromPicker-datepicker').click()
+        cy.get(':nth-child(1) > :nth-child(3) > .ui-state-default').click()
+        cy.get('#dateToPicker-datepicker').click()
+        cy.get(':nth-child(2) > :nth-child(5) > .ui-state-default').click()
+        cy.get('td > input.portlet-form-button').click()
+        cy.get('p > a').click()
+        /**to jest komentarz */
+    })
+  })
